@@ -13,6 +13,9 @@ end
 
 # Simple LRU Cache implementation using hash and doubly linked list.
 class LRUCache
+  extend T::Sig
+
+  sig { params(capacity: Integer).void }
   def initialize(capacity)
     @capacity = capacity
     @nodemap = {} # {key: Node}
@@ -22,6 +25,7 @@ class LRUCache
     @tail.prev = @head
   end
 
+  sig { void }
   def print_nodes
     cur = @head.next
     while cur && cur != @tail
@@ -30,6 +34,7 @@ class LRUCache
     end
   end
 
+  sig { params(key: T.untyped, value: T.untyped).void }
   def insert(key, value)
     puts "Inserting node #{key}, #{value}"
     n = Node.new(key, value)
@@ -45,6 +50,7 @@ class LRUCache
     delete(@tail.prev.key)
   end
 
+  sig { params(key: T.untyped).void }
   def delete(key)
     n = @nodemap[key]
     n.prev.next = n.next
@@ -52,6 +58,7 @@ class LRUCache
     @nodemap.delete(key)
   end
 
+  sig { params(key: T.untyped).returns(T.untyped) }
   def get(key)
     return unless @nodemap.key?(key)
 
@@ -64,6 +71,7 @@ class LRUCache
     @nodemap[key].val
   end
 
+  sig { params(key: T.untyped, value: T.untyped).void }
   def set(key, value)
     delete(key) if @nodemap.key?(key)
     insert(key, value)
