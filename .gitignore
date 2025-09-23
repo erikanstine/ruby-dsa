@@ -1,0 +1,39 @@
+# Bundler / gems
+/.bundle
+/vendor/bundle
+/vendor/cache
+*.gem
+
+# Logs / temp
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ruby artifacts
+*.rbc
+*.rbo
+.byebug_history
+.irb_history
+.pry_history
+
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Sorbet / Tapioca (keep config, ignore generated stubs)
+sorbet/rbi/gems/
+sorbet/rbi/hidden-definitions/
+sorbet/rbi/sorbet-typed/
+sorbet/rbi/todo.rbi
+.tapioca/
+
+# Test / coverage output
+/coverage/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
