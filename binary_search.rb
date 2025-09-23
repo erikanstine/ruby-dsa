@@ -1,3 +1,4 @@
+# typed: true
 def b_search(nums, target)
   l = 0
   r = nums.length - 1

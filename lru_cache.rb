@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Double linked list node for LRU list.

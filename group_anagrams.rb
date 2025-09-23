@@ -1,3 +1,4 @@
+# typed: false
 def parse_word(word)
   lmap = [0] * 26
 
